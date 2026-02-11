@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💝</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Floating Background -->
+    <div class="floating-elements"></div>
+
+    <div class="container">
+
+        <!-- 🎵 Music Player -->
+        <div id="musicControls" class="music-controls">
+            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+            <audio id="bgMusic" loop>
+                <source id="musicSource" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- ======================= -->
+        <!-- STEP 0 (Intro) -->
+        <!-- ======================= -->
+        <div class="question-section" id="question0">
+            <h1 id="valentineTitle"></h1>
+            <h2 id="question0Text"></h2>
+            <button class="cute-btn" onclick="showNextQuestion(1)" id="nBtn"></button>
+        </div>
+
+        <!-- ======================= -->
+        <!-- STEP 1 -->
+        <!-- ======================= -->
+        <div class="question-section hidden" id="question2">
+            <h1>Yeayyyy benarr 🥳🥳🥳</h1>
+            <h2>jadi saia mau nanya</h2>
+            <h2 id="question1Text"></h2>
+
+            <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
+            <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
+
+            <div class="secret-answer">
+                <button class="cute-btn special" onclick="showNextQuestion(3)" id="secretAnswerBtn"></button>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- STEP 2 (Gallery Selection) -->
+        <!-- ======================= -->
+        <div class="question-section hidden" id="question1">
+            <h1>Tapi sebelumnya Saia harus pastikan ini Daniela atau bukan</h1>
+            <h2>Kalau ini daniela coba klik yang mana fotonya</h2>
+
+            <div class="gallery">
+                <img src="fotop.jpeg" class="choice step-image" data-correct="false">
+                <img src="fotop1.jpeg" class="choice step-image" data-correct="false">
+                <img src="rfoto.jpeg" class="choice step-image" data-correct="false">
+                <img src="rfoto1.jpeg" class="choice step-image" data-correct="true">  <!-- BENAR -->
+                <img src="rfoto2.jpeg" class="choice step-image" data-correct="false">
+                <img src="rfoto3.jpeg" class="choice step-image" data-correct="false">
+                <img src="rfoto4.jpeg" class="choice step-image" data-correct="false">
+                <img src="rfoto5.jpeg" class="choice step-image" data-correct="false">
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- STEP 3 (Love Meter) -->
+        <!-- ======================= -->
+        <div class="question-section hidden" id="question3">
+            <h2 id="question2Text"></h2>
+
+            <div class="love-meter">
+                <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter">
+                <p>
+                     <span class="love-value-container"><span id="startText"></span> (<span id="loveValue">100</span>%)</span>
+                    <span id="extraLove" class="hidden"></span>
+                </p>
+            </div>
+
+            <button class="cute-btn" onclick="showNextQuestion(4)" id="nextBtn"></button>
+        </div>
+
+        <!-- ======================= -->
+        <!-- STEP 4 (Final Question) -->
+        <!-- ======================= -->
+        <div class="question-section hidden" id="question4">
+            <h2 id="question3Text"></h2>
+
+            <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
+            <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CELEBRATION -->
+        <!-- ======================= -->
+        <div class="celebration hidden" id="celebration">
+            <h2 id="celebrationTitle"></h2>
+            <p class="celebration-text" id="celebrationMessage"></p>
+            <p class="celebration-text" id="celebrationEmojis"></p>
+
+            <button class="cute-btn" onclick="showNextQuestion(6)"id = "cBtn"></button>
+        </div>
+
+        <!-- ======================= -->
+        <!-- FINAL MESSAGE -->
+         <div class="question-section hidden" id="finalImage">
+            <h2 class="final-title">💖 Here's your flower 💖</h2>
+
+    <img 
+        src="flower.jpeg" 
+        alt="Final Image"
+        class="final-image"
+    />
+
+    <p class="final-text">
+        Tolong gambar bunganya di download yaa, bunga itu ada artinya
+    </p>
+</div>
+
+
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
